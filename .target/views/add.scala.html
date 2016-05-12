@@ -1,0 +1,20 @@
+@(messageForm: Form[Message])
+@import helper._
+@main("hoge") {
+<div class=hedder>
+<h1>新規</h1>
+<div class = nav>
+<input type="button" onclick="location.href='/'"value="一覧に戻る"class="btn">
+<input type="button" onclick="location.href='setItem'"value="投稿編集"class="btn">
+<input type="button" onclick="location.href='delete'"value="削除"class="btn">
+<input type="button" onclick="location.href='find'"value="投稿者検索"class="btn">
+</div>
+</div>
+
+@form(action = routes.Application.doAdd()) {
+    	@inputText(messageForm("name"),'_label -> "name",'_help->"必須")
+    	@inputText(messageForm("mail"),'_label -> "mail",'_help->"Email")
+    	 @textarea(messageForm("message"), args = 'rows -> 3, 'cols -> 50)
+    	 <input type="submit" value="送信">
+    	}
+}

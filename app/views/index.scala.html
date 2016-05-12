@@ -1,0 +1,20 @@
+@(messages: List[Message])
+@import helper._
+
+@main("Welcome to Play"){
+<body>
+<div class=hedder>
+<h1>ホーム画面</h1>
+<div class= nav>
+<input type="button" onclick="location.href='add'"value="新規" class="btn">
+<input type="button" onclick="location.href='setItem'"value="投稿編集" class="btn">
+<input type="button" onclick="location.href='delete'"value="削除" class="btn">
+<input type="button" onclick="location.href='find'"value="投稿者検索" class="btn">
+</div>
+</div>
+
+<p>データベースサンプル（Single）DBサンプル</p>
+<p>@messages</p>
+</body>
+}
+

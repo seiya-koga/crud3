@@ -1,0 +1,21 @@
+@(messages: List[Message], messageForm: Form[Message])
+@import helper._
+@main("hoge") {
+<div class=hedder>
+<h1>投稿の検索</h1>
+<div class = nav>
+<input type="button" onclick="location.href='/'"value="一覧に戻る"class="btn">
+<input type="button" onclick="location.href='add'"value="新規"class="btn">
+<input type="button" onclick="location.href='setItem'"value="投稿編集"class="btn">
+<input type="button" onclick="location.href='delete'"value="削除"class="btn">
+</div>
+</div>
+
+@form(action = routes.Application.doFind()) {
+  	@inputText(messageForm("name"),'_label -> "input",'_msg -> "required")
+  	<input type='submit' value='送信'>
+  }
+  @if(messages != null) {
+  	<pre>@messages</pre>
+  }
+}

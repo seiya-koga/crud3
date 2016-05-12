@@ -1,0 +1,20 @@
+@(title: String, document: String, messageForm: Form[Message])
+@import helper._
+@main("hoge") {
+<div class=hedder>
+<h1>@title</h1>
+<div class = nav>
+<input type="button" onclick="location.href='/'"value="一覧に戻る"class="btn">
+<input type="button" onclick="location.href='add'"value="新規"class="btn">
+<input type="button" onclick="location.href='find'"value="投稿者検索"class="btn">
+<input type="button" onclick="location.href='delete'"value="削除"class="btn">
+</div>
+</div>
+
+<h3>@document</h3>
+ @form(action = routes.Application.edit()) {
+  	@inputText(messageForm("id"),'_label -> "id")
+  	<input type='hidden' name='name' value='dummy' />
+  	<input type='submit' value='送信'>
+  }
+}

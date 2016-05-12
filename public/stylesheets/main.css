@@ -1,0 +1,21 @@
+body {
+    color: #006600;
+}
+.hedder{
+	background-color:#66aa66;
+
+}
+h1 {
+    font-size:18pt;
+    font-weight:bold;
+
+    color:#ccffcc;
+    padding:3px;
+}
+
+.btn,input[type="button"]{
+	overflow:visible;
+	height:100px;
+	width:150px;
+
+	}
